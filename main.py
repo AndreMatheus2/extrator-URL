@@ -1,5 +1,10 @@
 url = 'httpa://bytebank.com/cambio?moedaOrigem=real&moedaDestino=dolar&quantidade=100'
 
+url = url.strip()
+
+if url == '':
+    raise ValueError('URL vazia')
+
 indiceInterrogacao = url.find('?')
 urlBase = url[:indiceInterrogacao]
 print(urlBase)
